@@ -1,0 +1,4 @@
+configuration {
+  display-drun: "Name";
+  drun-display-format: "{name}";
+}
