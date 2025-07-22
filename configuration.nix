@@ -1,4 +1,3 @@
-
 { config, pkgs, ... }:
 {
   imports = [
@@ -6,8 +5,10 @@
     <home-manager/nixos>
   ];
 
+  home-manager.backupFileExtension = "backup";
   boot.loader.systemd-boot.enable = true;
   networking.networkmanager.enable = true;
+  networking.hostName = "nixos";
 
   time.timeZone = "America/New_York";
 
@@ -20,12 +21,11 @@
     ];
   };
 
-  nixpkgs.config.allowUnfree = true;
   system.stateVersion = "25.05";
+  nixpkgs.config.allowUnfree = true;
 
   programs.hyprland = {
     enable = true;
-    xwayland.enable = true;
   };
 
   programs.fish.enable = true;
@@ -34,13 +34,44 @@
   environment.systemPackages = with pkgs; [
     nixfmt-rfc-style
     rofi-wayland
+    hollywood
+    cmatrix
+    neofetch
+    wl-clipboard
+    hyprpaper
   ];
 
   home-manager.users.nate =
     { pkgs, ... }:
     {
-      nixpkgs.config.allowUnfree = true;
       home.stateVersion = "25.05";
+      nixpkgs.config.allowUnfree = true;
+
+      dconf.settings = {
+        "org/gnome/desktop/interface" = {
+          color-scheme = "prefer-dark";
+        };
+      };
+
+      programs.fish = {
+        enable = true;
+
+        shellAliases = {
+          sl = "ls -A1";
+          clean = "rm -rf node_modules pnpm-lock.yaml .next && pnpm up --latest";
+        };
+
+        functions = {
+          copy = ''
+            if test -z $argv[1]
+              echo "Usage: copy <file>"
+              return 1
+            end
+
+            wl-copy < $argv[1]
+          '';
+        };
+      };
 
       programs.vscode = {
         enable = true;
@@ -67,6 +98,7 @@
 
       home.packages = with pkgs; [
         _1password-gui
+        discord
       ];
     };
 }
