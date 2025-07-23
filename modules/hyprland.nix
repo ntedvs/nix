@@ -1,0 +1,58 @@
+{ ... }:
+{
+  programs.hyprland.enable = true;
+
+  home-manager.users.nate = {
+    wayland.windowManager.hyprland = {
+      enable = true;
+
+      settings = {
+        # env = [
+        #   "XCURSOR_SIZE, 24"
+        #   "XCURSOR_THEME, phinger-cursors-dark 24"
+        # ];
+
+        exec-once = [
+          "waybar"
+          "hyprpaper"
+          "hyprctl setcursor phinger-cursors-dark 24"
+        ];
+
+        bind = [
+          "alt, a, exec, alacritty"
+          "alt, q, killactive"
+          "alt, m, exit"
+
+          "alt, left, workspace, -1"
+          "alt, right, workspace, +1"
+
+          "alt, space, exec, rofi -show drun"
+        ];
+
+        bindm = [
+          "alt, mouse:272, movewindow"
+          "alt, mouse:273, resizewindow"
+        ];
+
+        layerrule = [
+          "noanim, rofi"
+        ];
+
+        general = {
+          gaps_in = 8;
+          gaps_out = 16;
+
+          border_size = 0;
+        };
+
+        input = {
+          kb_options = "caps:escape";
+        };
+
+        cursor = {
+          no_hardware_cursors = true;
+        };
+      };
+    };
+  };
+}
