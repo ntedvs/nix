@@ -1,9 +1,9 @@
 { ... }:
 {
   home-manager.users.nate = {
-    # services.ollama = {
-    #   enable = true;
-    #   acceleration = "cuda";
-    # };
+    services.ollama = {
+      enable = true;
+      acceleration = "cuda";
+    };
   };
 }

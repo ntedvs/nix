@@ -19,6 +19,8 @@
           rust-lang.rust-analyzer
           bradlc.vscode-tailwindcss
           vscodevim.vim
+          # inferrinizzard.prettier-sql-vscode
+          # natedavis.style-sorter
         ];
 
         userSettings = {
@@ -46,6 +48,8 @@
           "emmet.showExpandedAbbreviation" = "never";
           "terminal.integrated.shellIntegration.decorationsEnabled" = "never";
 
+          "keyboard.dispatch" = "keyCode";
+
           "editor.formatOnSave" = true;
           "editor.defaultFormatter" = "esbenp.prettier-vscode";
           "editor.codeActionsOnSave" = {
@@ -54,10 +58,8 @@
           "prettier.semi" = false;
 
           "github.copilot.nextEditSuggestions.enabled" = true;
-
           "liveServer.settings.donotShowInfoMsg" = true;
-
-          "keyboard.dispatch" = "keyCode";
+          "style-sorter.order" = "smacss";
 
           "nix.enableLanguageServer" = true;
           "nix.serverPath" = "nixd";
@@ -72,6 +74,9 @@
             };
           };
 
+          "Prettier-SQL.SQLFlavourOverride" = "postgresql";
+          # "Prettier-SQL.logicalOperatorNewline" = "after";
+
           "[python]" = {
             "editor.tabSize" = 4;
             "editor.defaultFormatter" = "charliermarsh.ruff";
@@ -84,6 +89,9 @@
           };
           "[snippets]" = {
             "editor.defaultFormatter" = "vscode.json-language-features";
+          };
+          "[sql]" = {
+            "editor.defaultFormatter" = "inferrinizzard.prettier-sql-vscode";
           };
           "[nix]" = {
             "editor.defaultFormatter" = "jnoortheen.nix-ide";
@@ -121,6 +129,8 @@
             "**/Cargo.lock" = true;
 
             "**/.claude" = true;
+
+            "**/flake.lock" = true;
 
             "**/.venv" = true;
           };

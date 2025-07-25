@@ -24,8 +24,13 @@
     nodejs
     pnpm
 
-    nerd-fonts.symbols-only
-    manrope
+    (python3.withPackages (ps: with ps; [ pip ]))
+    uv
+
+    rustup
+
+    open-sans
+    roboto-mono
 
     _1password-gui
     discord

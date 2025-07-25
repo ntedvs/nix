@@ -29,6 +29,8 @@
     "flakes"
   ];
 
+  programs.nix-ld.enable = true;
+
   nixpkgs.config.allowUnfree = true;
   programs.fish.enable = true;
 

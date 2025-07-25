@@ -28,6 +28,7 @@
           ./modules/rofi.nix
           ./modules/waybar.nix
           ./modules/git.nix
+          ./modules/ollama.nix
 
           home-manager.nixosModules.home-manager
           {

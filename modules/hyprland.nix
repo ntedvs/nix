@@ -7,11 +7,6 @@
       enable = true;
 
       settings = {
-        # env = [
-        #   "XCURSOR_SIZE, 24"
-        #   "XCURSOR_THEME, phinger-cursors-dark 24"
-        # ];
-
         exec-once = [
           "waybar"
           "hyprpaper"
@@ -34,9 +29,11 @@
           "alt, mouse:273, resizewindow"
         ];
 
-        layerrule = [
-          "noanim, rofi"
-        ];
+        decoration = {
+          blur = {
+            enabled = false;
+          };
+        };
 
         general = {
           gaps_in = 8;
