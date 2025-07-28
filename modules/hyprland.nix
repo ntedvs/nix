@@ -22,6 +22,12 @@
           "alt, right, workspace, +1"
 
           "alt, space, exec, rofi -show drun"
+
+          "alt, 1, movetoworkspace, 1"
+          "alt, 2, movetoworkspace, 2"
+          "alt, 3, movetoworkspace, 3"
+          "alt, 4, movetoworkspace, 4"
+          "alt, 5, movetoworkspace, 5"
         ];
 
         bindm = [

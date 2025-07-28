@@ -6,21 +6,23 @@
 
       profiles.default = {
         extensions = with pkgs.vscode-extensions; [
+          formulahendry.auto-rename-tag
+          # anthropic.claude-code
           tamasfe.even-better-toml
           ritwickdey.liveserver
-          zhuangtongfa.material-theme
-          esbenp.prettier-vscode
           pkief.material-icon-theme
           jnoortheen.nix-ide
+          zhuangtongfa.material-theme
+          esbenp.prettier-vscode
+          # inferrinizzard.prettier-sql-vscode
           ms-python.vscode-pylance
           ms-python.python
           ms-python.debugpy
           charliermarsh.ruff
           rust-lang.rust-analyzer
+          # natedavis.style-sorter
           bradlc.vscode-tailwindcss
           vscodevim.vim
-          # inferrinizzard.prettier-sql-vscode
-          # natedavis.style-sorter
         ];
 
         userSettings = {

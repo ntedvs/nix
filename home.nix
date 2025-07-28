@@ -7,9 +7,19 @@
   programs.home-manager.enable = true;
   programs.firefox.enable = true;
 
+  gtk = {
+    enable = true;
+
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
+  };
+
   home.packages = with pkgs; [
     networkmanagerapplet
     wl-clipboard
+    unzip
 
     nixd
     nixfmt-rfc-style
@@ -28,6 +38,7 @@
     uv
 
     rustup
+    gcc
 
     open-sans
     roboto-mono
